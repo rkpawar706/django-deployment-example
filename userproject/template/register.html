@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block body_block%}
+    <div class="jumbotron" align="center " >
+    <h1 class=".text-danger" >WELCOME TO THE REGISTRATION PAGE </h1>
+        </div>
+<div class="jumbotron">
+<div class="mb-3" align="center">
+    {%if registered %}
+        <h1>thank you for the registration </h1>
+    {%else%}
+        <h1>REGISTER HERE</h1>
+        <form method="post" enctype="multipart/form-data">
+
+
+            {{f1.as_p}}
+            {{f2.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Register">
+{% endif%}
+        </form>
+</div>
+</div>
+{% endblock%}
